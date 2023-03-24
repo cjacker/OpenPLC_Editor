@@ -4757,3 +4757,90 @@ msgstr "检查更新..."
 
 msgid "&Tutorials and Examples"
 msgstr "代码示例"
+
+msgid "Sort Alpha"
+msgstr "按字母排序"
+
+msgid "Transfer Program to PLC"
+msgstr "传输程序"
+
+msgid "Board Type"
+msgstr "目标开发板"
+
+msgid "COM Port"
+msgstr "串口"
+
+msgid "Compile Only"
+msgstr "只做编译，不传输"
+
+msgid "Compilation output"
+msgstr "编译输出"
+
+msgid "I/O Config"
+msgstr "I/O 配置"
+
+msgid ""
+"This setting will allow you to change the default pin mapping for your board. Please be cautious while edditing, as mistakes can lead to compilation errors. Pin numbers should obey the Arduino notation for your board and must be comma-separated."
+
+msgstr "您可以修改开发板的默认引脚映射。编辑时需要注意，错误的配置可能会导致编译错误。引脚数字应该符合Arduino的标识写法，并且必须用逗号分隔。"
+
+msgid "Restore Defaults"
+msgstr "重置为默认值"
+
+msgid "Save Changes"
+msgstr "保存修改" 
+
+msgid "Communications"
+msgstr "通讯"
+
+msgid "Transfer to PLC"
+msgstr "传输到PLC"
+
+msgid "Compile"
+msgstr "编译"
+
+msgid "Enable Modbus RTU (Serial)"
+msgstr "启用Modebus RTU (串行)"
+
+msgid "Interface:"
+msgstr "接口:"
+
+msgid "Baud:"
+msgstr "波特率:"
+
+msgid "Slave ID:"
+msgstr "从机ID:"
+
+msgid "Tx Pin:"
+msgstr "Tx引脚:"
+
+msgid "Enable Modbus TCP"
+msgstr "启用Modbus TCP"
+
+msgid "MAC:"
+msgstr "MAC地址:"
+
+msgid "Gateway:"
+msgstr "网关:"
+
+msgid "Subnet:"
+msgstr "子网:"
+
+msgid "Wi-Fi SSID:"
+msgstr "无线热点:"
+
+msgid "Password:"
+msgstr "密码:"
+
+msgid "Digital Inputs"
+msgstr "数字输入"
+
+msgid "Digital Outputs"
+msgstr "数字输出"
+
+msgid "Analog Inputs"
+msgstr "模拟输入"
+
+msgid "Analog Outputs"
+msgstr "模拟输出"
+

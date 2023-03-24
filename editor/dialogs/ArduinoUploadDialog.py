@@ -35,9 +35,9 @@ class ArduinoUploadDialog(wx.Dialog):
         current_dir = paths.AbsDir(__file__)
         
         if os.name == 'nt':
-            wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Transfer Program to PLC", pos = wx.DefaultPosition, size = wx.Size( 693,453 ), style = wx.DEFAULT_DIALOG_STYLE )
+            wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = _("Transfer Program to PLC"), pos = wx.DefaultPosition, size = wx.Size( 693,453 ), style = wx.DEFAULT_DIALOG_STYLE )
         else:
-            wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Transfer Program to PLC", pos = wx.DefaultPosition, size = wx.Size( 720,590 ), style = wx.DEFAULT_DIALOG_STYLE )
+            wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = _("Transfer Program to PLC"), pos = wx.DefaultPosition, size = wx.Size( 720,590 ), style = wx.DEFAULT_DIALOG_STYLE )
         
         # load Hals automatically and initialize the board_type_comboChoices
         self.loadHals()
@@ -66,14 +66,14 @@ class ArduinoUploadDialog(wx.Dialog):
 
 
 
-        self.m_staticText1 = wx.StaticText( self.m_panel5, wx.ID_ANY, u"Board Type", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+        self.m_staticText1 = wx.StaticText( self.m_panel5, wx.ID_ANY, _("Board Type"), wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
         self.m_staticText1.Wrap( -1 )
         fgSizer1.Add( self.m_staticText1, 0, wx.ALIGN_CENTER|wx.BOTTOM|wx.LEFT|wx.TOP, 15 )
 
         self.board_type_combo = wx.ComboBox( self.m_panel5, wx.ID_ANY, u"Arduino Uno", wx.DefaultPosition, wx.Size( 420,-1 ), board_type_comboChoices, 0 )
         fgSizer1.Add( self.board_type_combo, 0, wx.ALIGN_CENTER|wx.BOTTOM|wx.EXPAND|wx.TOP, 15 )
 
-        self.m_staticText2 = wx.StaticText( self.m_panel5, wx.ID_ANY, u"COM Port", wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
+        self.m_staticText2 = wx.StaticText( self.m_panel5, wx.ID_ANY, _("COM Port"), wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
         self.m_staticText2.Wrap( -1 )
         fgSizer1.Add( self.m_staticText2, 0, wx.ALIGN_CENTER|wx.ALIGN_TOP|wx.BOTTOM|wx.LEFT, 15 )
 
@@ -84,14 +84,14 @@ class ArduinoUploadDialog(wx.Dialog):
 
         bSizer21.Add( fgSizer1, 1, wx.EXPAND, 5 )
 
-        self.check_compile = wx.CheckBox( self.m_panel5, wx.ID_ANY, u"Compile Only", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.check_compile = wx.CheckBox( self.m_panel5, wx.ID_ANY, _("Compile Only"), wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer21.Add( self.check_compile, 0, wx.LEFT, 15 )
         self.check_compile.Bind(wx.EVT_CHECKBOX, self.onUIChange)
 
         self.m_staticline2 = wx.StaticLine( self.m_panel5, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
         bSizer21.Add( self.m_staticline2, 0, wx.EXPAND |wx.ALL, 5 )
 
-        self.m_staticText3 = wx.StaticText( self.m_panel5, wx.ID_ANY, u"Compilation output", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText3 = wx.StaticText( self.m_panel5, wx.ID_ANY, _("Compilation output"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText3.Wrap( -1 )
         bSizer21.Add( self.m_staticText3, 0, wx.ALL, 5 )
 
@@ -103,7 +103,7 @@ class ArduinoUploadDialog(wx.Dialog):
 
         bSizer21.Add( self.output_text, 0, wx.ALL|wx.EXPAND, 5 )
 
-        self.upload_button = wx.Button( self.m_panel5, wx.ID_ANY, u"Transfer to PLC", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.upload_button = wx.Button( self.m_panel5, wx.ID_ANY, _("Transfer to PLC"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.upload_button.SetMinSize( wx.Size( 150,30 ) )
         self.upload_button.Bind(wx.EVT_BUTTON, self.OnUpload)
 
@@ -112,7 +112,7 @@ class ArduinoUploadDialog(wx.Dialog):
         self.m_panel5.SetSizer( bSizer21 )
         self.m_panel5.Layout()
         bSizer21.Fit( self.m_panel5 )
-        self.m_listbook2.AddPage( self.m_panel5, u"Transfer", True )
+        self.m_listbook2.AddPage( self.m_panel5, _("Transfer"), True )
         m_listbook2Bitmap = wx.Bitmap(os.path.join(current_dir, "..", "images", "transfer.png"), wx.BITMAP_TYPE_ANY )
         if ( m_listbook2Bitmap.Ok() ):
             m_listbook2Images.Add( m_listbook2Bitmap )
@@ -122,34 +122,34 @@ class ArduinoUploadDialog(wx.Dialog):
         self.m_panel6 = wx.Panel( self.m_listbook2, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
         bSizer3 = wx.BoxSizer( wx.VERTICAL )
 
-        self.m_staticText4 = wx.StaticText( self.m_panel6, wx.ID_ANY, u"This setting will allow you to change the default pin mapping for your board. Please be cautious while edditing, as mistakes can lead to compilation errors. Pin numbers should obey the Arduino notation for your board and must be comma-separated.", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText4 = wx.StaticText( self.m_panel6, wx.ID_ANY, _("This setting will allow you to change the default pin mapping for your board. Please be cautious while edditing, as mistakes can lead to compilation errors. Pin numbers should obey the Arduino notation for your board and must be comma-separated."), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText4.Wrap( 530 )
-        self.m_staticText4.SetMinSize( wx.Size( -1,100 ) )
+        self.m_staticText4.SetMinSize( wx.Size( -1,80 ) )
 
         bSizer3.Add( self.m_staticText4, 0, wx.ALL, 5 )
 
-        self.m_staticText5 = wx.StaticText( self.m_panel6, wx.ID_ANY, u"Digital Inputs", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText5 = wx.StaticText( self.m_panel6, wx.ID_ANY, _("Digital Inputs"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText5.Wrap( -1 )
         bSizer3.Add( self.m_staticText5, 0, wx.ALL, 5 )
 
         self.m_textCtrl2 = wx.TextCtrl( self.m_panel6, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer3.Add( self.m_textCtrl2, 0, wx.ALL|wx.EXPAND, 5 )
 
-        self.m_staticText6 = wx.StaticText( self.m_panel6, wx.ID_ANY, u"Digital Outputs", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText6 = wx.StaticText( self.m_panel6, wx.ID_ANY, _("Digital Outputs"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText6.Wrap( -1 )
         bSizer3.Add( self.m_staticText6, 0, wx.ALL, 5 )
 
         self.m_textCtrl3 = wx.TextCtrl( self.m_panel6, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer3.Add( self.m_textCtrl3, 0, wx.ALL|wx.EXPAND, 5 )
 
-        self.m_staticText7 = wx.StaticText( self.m_panel6, wx.ID_ANY, u"Analog Inputs", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText7 = wx.StaticText( self.m_panel6, wx.ID_ANY, _("Analog Inputs"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText7.Wrap( -1 )
         bSizer3.Add( self.m_staticText7, 0, wx.ALL, 5 )
 
         self.m_textCtrl4 = wx.TextCtrl( self.m_panel6, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer3.Add( self.m_textCtrl4, 0, wx.ALL|wx.EXPAND, 5 )
 
-        self.m_staticText8 = wx.StaticText( self.m_panel6, wx.ID_ANY, u"Analog Outputs", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText8 = wx.StaticText( self.m_panel6, wx.ID_ANY, _("Analog Outputs"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText8.Wrap( -1 )
         bSizer3.Add( self.m_staticText8, 0, wx.ALL, 5 )
 
@@ -164,12 +164,12 @@ class ArduinoUploadDialog(wx.Dialog):
 
         gSizer1 = wx.GridSizer( 0, 2, 0, 0 )
 
-        self.m_button2 = wx.Button( self.m_panel6, wx.ID_ANY, u"Restore Defaults", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_button2 = wx.Button( self.m_panel6, wx.ID_ANY, _("Restore Defaults"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_button2.SetMinSize( wx.Size( 150,30 ) )
 
         gSizer1.Add( self.m_button2, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
-        self.m_button3 = wx.Button( self.m_panel6, wx.ID_ANY, u"Save Changes", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_button3 = wx.Button( self.m_panel6, wx.ID_ANY, _("Save Changes"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_button3.SetMinSize( wx.Size( 150,30 ) )
 
         gSizer1.Add( self.m_button3, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
@@ -181,7 +181,7 @@ class ArduinoUploadDialog(wx.Dialog):
         self.m_panel6.SetSizer( bSizer3 )
         self.m_panel6.Layout()
         bSizer3.Fit( self.m_panel6 )
-        self.m_listbook2.AddPage( self.m_panel6, u"I/O Config", False )
+        self.m_listbook2.AddPage( self.m_panel6, _("I/O Config"), False )
         m_listbook2Bitmap = wx.Bitmap(os.path.join(current_dir, "..", "images", "io.png"), wx.BITMAP_TYPE_ANY )
         if ( m_listbook2Bitmap.Ok() ):
             m_listbook2Images.Add( m_listbook2Bitmap )
@@ -191,7 +191,7 @@ class ArduinoUploadDialog(wx.Dialog):
         self.m_panel7 = wx.Panel( self.m_listbook2, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.TAB_TRAVERSAL )
         bSizer4 = wx.BoxSizer( wx.VERTICAL )
 
-        self.check_modbus_serial = wx.CheckBox( self.m_panel7, wx.ID_ANY, u"Enable Modbus RTU (Serial)", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.check_modbus_serial = wx.CheckBox( self.m_panel7, wx.ID_ANY, _("Enable Modbus RTU (Serial)"), wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer4.Add( self.check_modbus_serial, 0, wx.ALL, 10 )
         self.check_modbus_serial.Bind(wx.EVT_CHECKBOX, self.onUIChange)
 
@@ -199,9 +199,9 @@ class ArduinoUploadDialog(wx.Dialog):
         fgSizer2.SetFlexibleDirection( wx.BOTH )
         fgSizer2.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
 
-        self.m_staticText10 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Interface:", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+        self.m_staticText10 = wx.StaticText( self.m_panel7, wx.ID_ANY, _("Interface:"), wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
         self.m_staticText10.Wrap( -1 )
-        self.m_staticText10.SetMinSize( wx.Size( 60,-1 ) )
+        self.m_staticText10.SetMinSize( wx.Size( 80,-1 ) )
 
         fgSizer2.Add( self.m_staticText10, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
@@ -212,9 +212,9 @@ class ArduinoUploadDialog(wx.Dialog):
 
         fgSizer2.Add( self.serial_iface_combo, 0, wx.ALL, 5 )
 
-        self.m_staticText11 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Baud:", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+        self.m_staticText11 = wx.StaticText( self.m_panel7, wx.ID_ANY, _("Baud:"), wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
         self.m_staticText11.Wrap( -1 )
-        self.m_staticText11.SetMinSize( wx.Size( 60,-1 ) )
+        self.m_staticText11.SetMinSize( wx.Size( 80,-1 ) )
 
         fgSizer2.Add( self.m_staticText11, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
@@ -225,9 +225,9 @@ class ArduinoUploadDialog(wx.Dialog):
 
         fgSizer2.Add( self.baud_rate_combo, 0, wx.ALL, 5 )
 
-        self.m_staticText12 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Slave ID:", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+        self.m_staticText12 = wx.StaticText( self.m_panel7, wx.ID_ANY, _("Slave ID:"), wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
         self.m_staticText12.Wrap( -1 )
-        self.m_staticText12.SetMinSize( wx.Size( 60,-1 ) )
+        self.m_staticText12.SetMinSize( wx.Size( 80,-1 ) )
 
         fgSizer2.Add( self.m_staticText12, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
@@ -236,9 +236,9 @@ class ArduinoUploadDialog(wx.Dialog):
 
         fgSizer2.Add( self.slaveid_txt, 0, wx.ALL, 5 )
 
-        self.m_staticText13 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Tx Pin:", wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
+        self.m_staticText13 = wx.StaticText( self.m_panel7, wx.ID_ANY, _("Tx Pin:"), wx.DefaultPosition, wx.Size( -1,-1 ), 0 )
         self.m_staticText13.Wrap( -1 )
-        self.m_staticText13.SetMinSize( wx.Size( 60,-1 ) )
+        self.m_staticText13.SetMinSize( wx.Size( 80,-1 ) )
 
         fgSizer2.Add( self.m_staticText13, 0, wx.ALIGN_CENTER_VERTICAL|wx.ALL, 5 )
 
@@ -259,7 +259,7 @@ class ArduinoUploadDialog(wx.Dialog):
         self.m_staticline21 = wx.StaticLine( self.m_panel7, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, wx.LI_HORIZONTAL )
         bSizer4.Add( self.m_staticline21, 0, wx.ALL|wx.BOTTOM|wx.EXPAND|wx.TOP, 5 )
 
-        self.check_modbus_tcp = wx.CheckBox( self.m_panel7, wx.ID_ANY, u"Enable Modbus TCP", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.check_modbus_tcp = wx.CheckBox( self.m_panel7, wx.ID_ANY, _("Enable Modbus TCP"), wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer4.Add( self.check_modbus_tcp, 0, wx.ALL, 10 )
         self.check_modbus_tcp.Bind(wx.EVT_CHECKBOX, self.onUIChange)
         
@@ -267,9 +267,9 @@ class ArduinoUploadDialog(wx.Dialog):
         fgSizer3.SetFlexibleDirection( wx.BOTH )
         fgSizer3.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
 
-        self.m_staticText14 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Interface:", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText14 = wx.StaticText( self.m_panel7, wx.ID_ANY, _("Interface:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText14.Wrap( -1 )
-        self.m_staticText14.SetMinSize( wx.Size( 60,-1 ) )
+        self.m_staticText14.SetMinSize( wx.Size( 80,-1 ) )
 
         fgSizer3.Add( self.m_staticText14, 0, wx.ALL, 5 )
 
@@ -281,9 +281,9 @@ class ArduinoUploadDialog(wx.Dialog):
 
         fgSizer3.Add( self.tcp_iface_combo, 0, wx.ALL|wx.EXPAND, 5 )
 
-        self.m_staticText15 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"MAC:", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText15 = wx.StaticText( self.m_panel7, wx.ID_ANY, _("MAC:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText15.Wrap( -1 )
-        self.m_staticText15.SetMinSize( wx.Size( 60,-1 ) )
+        self.m_staticText15.SetMinSize( wx.Size( 80,-1 ) )
 
         fgSizer3.Add( self.m_staticText15, 0, wx.ALL, 5 )
 
@@ -299,9 +299,9 @@ class ArduinoUploadDialog(wx.Dialog):
         fgSizer4.SetFlexibleDirection( wx.BOTH )
         fgSizer4.SetNonFlexibleGrowMode( wx.FLEX_GROWMODE_SPECIFIED )
 
-        self.m_staticText17 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"IP:", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText17 = wx.StaticText( self.m_panel7, wx.ID_ANY, _("IP:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText17.Wrap( -1 )
-        self.m_staticText17.SetMinSize( wx.Size( 60,-1 ) )
+        self.m_staticText17.SetMinSize( wx.Size( 80,-1 ) )
 
         fgSizer4.Add( self.m_staticText17, 0, wx.ALL, 5 )
 
@@ -310,9 +310,9 @@ class ArduinoUploadDialog(wx.Dialog):
 
         fgSizer4.Add( self.ip_txt, 0, wx.ALL, 5 )
 
-        self.m_staticText18 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"DNS:", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText18 = wx.StaticText( self.m_panel7, wx.ID_ANY, _("DNS:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText18.Wrap( -1 )
-        self.m_staticText18.SetMinSize( wx.Size( 60,-1 ) )
+        self.m_staticText18.SetMinSize( wx.Size( 80,-1 ) )
 
         fgSizer4.Add( self.m_staticText18, 0, wx.ALL, 5 )
 
@@ -321,9 +321,9 @@ class ArduinoUploadDialog(wx.Dialog):
 
         fgSizer4.Add( self.dns_txt, 0, wx.ALL, 5 )
 
-        self.m_staticText19 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Gateway:", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText19 = wx.StaticText( self.m_panel7, wx.ID_ANY, _("Gateway:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText19.Wrap( -1 )
-        self.m_staticText19.SetMinSize( wx.Size( 60,-1 ) )
+        self.m_staticText19.SetMinSize( wx.Size( 80,-1 ) )
 
         fgSizer4.Add( self.m_staticText19, 0, wx.ALL, 5 )
 
@@ -332,9 +332,9 @@ class ArduinoUploadDialog(wx.Dialog):
 
         fgSizer4.Add( self.gateway_txt, 0, wx.ALL, 5 )
 
-        self.m_staticText20 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Subnet:", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText20 = wx.StaticText( self.m_panel7, wx.ID_ANY, _("Subnet:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText20.Wrap( -1 )
-        self.m_staticText20.SetMinSize( wx.Size( 60,-1 ) )
+        self.m_staticText20.SetMinSize( wx.Size( 80,-1 ) )
 
         fgSizer4.Add( self.m_staticText20, 0, wx.ALL, 5 )
 
@@ -343,9 +343,9 @@ class ArduinoUploadDialog(wx.Dialog):
 
         fgSizer4.Add( self.subnet_txt, 0, wx.ALL, 5 )
 
-        self.m_staticText21 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Wi-Fi SSID:", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText21 = wx.StaticText( self.m_panel7, wx.ID_ANY, _("Wi-Fi SSID:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText21.Wrap( -1 )
-        self.m_staticText21.SetMinSize( wx.Size( 60,-1 ) )
+        self.m_staticText21.SetMinSize( wx.Size( 80,-1 ) )
 
         fgSizer4.Add( self.m_staticText21, 0, wx.ALL, 5 )
 
@@ -354,9 +354,9 @@ class ArduinoUploadDialog(wx.Dialog):
 
         fgSizer4.Add( self.wifi_ssid_txt, 0, wx.ALL, 5 )
 
-        self.m_staticText22 = wx.StaticText( self.m_panel7, wx.ID_ANY, u"Password:", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText22 = wx.StaticText( self.m_panel7, wx.ID_ANY, _("Password:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText22.Wrap( -1 )
-        self.m_staticText22.SetMinSize( wx.Size( 60,-1 ) )
+        self.m_staticText22.SetMinSize( wx.Size( 80,-1 ) )
 
         fgSizer4.Add( self.m_staticText22, 0, wx.ALL, 5 )
 
@@ -374,12 +374,12 @@ class ArduinoUploadDialog(wx.Dialog):
 
         gSizer2 = wx.GridSizer( 0, 2, 0, 0 )
 
-        self.m_button4 = wx.Button( self.m_panel7, wx.ID_ANY, u"Restore Defaults", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_button4 = wx.Button( self.m_panel7, wx.ID_ANY, _("Restore Defaults"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_button4.SetMinSize( wx.Size( 150,30 ) )
 
         gSizer2.Add( self.m_button4, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
 
-        self.m_button5 = wx.Button( self.m_panel7, wx.ID_ANY, u"Save Changes", wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_button5 = wx.Button( self.m_panel7, wx.ID_ANY, _("Save Changes"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_button5.SetMinSize( wx.Size( 150,30 ) )
 
         gSizer2.Add( self.m_button5, 0, wx.ALIGN_CENTER|wx.ALL, 5 )
@@ -391,7 +391,7 @@ class ArduinoUploadDialog(wx.Dialog):
         self.m_panel7.SetSizer( bSizer4 )
         self.m_panel7.Layout()
         bSizer4.Fit( self.m_panel7 )
-        self.m_listbook2.AddPage( self.m_panel7, u"Communications", False )
+        self.m_listbook2.AddPage( self.m_panel7, _("Communications"), False )
         m_listbook2Bitmap = wx.Bitmap( os.path.join(current_dir, "..", "images", "comm.png"), wx.BITMAP_TYPE_ANY )
         if ( m_listbook2Bitmap.Ok() ):
             m_listbook2Images.Add( m_listbook2Bitmap )
@@ -426,10 +426,10 @@ class ArduinoUploadDialog(wx.Dialog):
 
         if (self.check_compile.GetValue() == False):
             self.com_port_combo.Enable(True)
-            self.upload_button.SetLabel("Transfer to PLC")
+            self.upload_button.SetLabel(_("Transfer to PLC"))
         elif (self.check_compile.GetValue() == True):
             self.com_port_combo.Enable(False)
-            self.upload_button.SetLabel("Compile")
+            self.upload_button.SetLabel(_("Compile"))
         
         if (self.check_modbus_tcp.GetValue() == False):
             self.tcp_iface_combo.Enable(False)
