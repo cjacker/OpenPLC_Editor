@@ -4751,3 +4751,9 @@ msgid ""
 "The off-delay timer can be used to delay setting an output false, for fixed "
 "period after input goes false."
 msgstr "断开延迟定时器能被用来延迟设置一个输出为FALSE，当输入到FALSE后经过一个固定的时间。"
+
+msgid "Check for updates..."
+msgstr "检查更新..."
+
+msgid "&Tutorials and Examples"
+msgstr "代码示例"
