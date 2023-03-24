@@ -1041,7 +1041,7 @@ msgstr "清除"
 
 #: ../controls/LogViewer.py:327
 msgid "Clean log messages"
-msgstr "清楚记录信息"
+msgstr "清除记录信息"
 
 #: ../ProjectController.py:1905
 msgid "Clean project build folder"
@@ -1053,7 +1053,7 @@ msgstr "清除构建目录\n"
 
 #: ../IDEFrame.py:439
 msgid "Clear Errors"
-msgstr "清楚错误"
+msgstr "清除错误"
 
 #: ../editors/Viewer.py:683
 msgid "Clear Execution Order"
