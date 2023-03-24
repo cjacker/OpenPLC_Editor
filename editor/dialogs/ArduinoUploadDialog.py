@@ -124,7 +124,7 @@ class ArduinoUploadDialog(wx.Dialog):
 
         self.m_staticText4 = wx.StaticText( self.m_panel6, wx.ID_ANY, u"This setting will allow you to change the default pin mapping for your board. Please be cautious while edditing, as mistakes can lead to compilation errors. Pin numbers should obey the Arduino notation for your board and must be comma-separated.", wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText4.Wrap( 530 )
-        self.m_staticText4.SetMinSize( wx.Size( -1,60 ) )
+        self.m_staticText4.SetMinSize( wx.Size( -1,100 ) )
 
         bSizer3.Add( self.m_staticText4, 0, wx.ALL, 5 )
 
