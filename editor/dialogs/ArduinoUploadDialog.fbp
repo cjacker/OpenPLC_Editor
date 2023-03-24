@@ -323,7 +323,7 @@
                                                     <property name="pos"></property>
                                                     <property name="resize">Resizable</property>
                                                     <property name="show">1</property>
-                                                    <property name="size">70,-1</property>
+                                                    <property name="size">100,-1</property>
                                                     <property name="style"></property>
                                                     <property name="subclass"></property>
                                                     <property name="toolbar_pane">0</property>
@@ -497,7 +497,7 @@
                                                     <property name="pos"></property>
                                                     <property name="resize">Resizable</property>
                                                     <property name="show">1</property>
-                                                    <property name="size">70,-1</property>
+                                                    <property name="size">100,-1</property>
                                                     <property name="style"></property>
                                                     <property name="subclass"></property>
                                                     <property name="toolbar_pane">0</property>
@@ -1179,7 +1179,7 @@
                                             <property name="maximum_size"></property>
                                             <property name="min_size"></property>
                                             <property name="minimize_button">0</property>
-                                            <property name="minimum_size">-1,60</property>
+                                            <property name="minimum_size">-1,80</property>
                                             <property name="moveable">1</property>
                                             <property name="name">m_staticText4</property>
                                             <property name="pane_border">1</property>
@@ -2421,7 +2421,7 @@
                                                     <property name="maximum_size"></property>
                                                     <property name="min_size"></property>
                                                     <property name="minimize_button">0</property>
-                                                    <property name="minimum_size">60,-1</property>
+                                                    <property name="minimum_size">80,-1</property>
                                                     <property name="moveable">1</property>
                                                     <property name="name">m_staticText10</property>
                                                     <property name="pane_border">1</property>
@@ -2595,7 +2595,7 @@
                                                     <property name="maximum_size"></property>
                                                     <property name="min_size"></property>
                                                     <property name="minimize_button">0</property>
-                                                    <property name="minimum_size">60,-1</property>
+                                                    <property name="minimum_size">80,-1</property>
                                                     <property name="moveable">1</property>
                                                     <property name="name">m_staticText11</property>
                                                     <property name="pane_border">1</property>
@@ -2769,7 +2769,7 @@
                                                     <property name="maximum_size"></property>
                                                     <property name="min_size"></property>
                                                     <property name="minimize_button">0</property>
-                                                    <property name="minimum_size">60,-1</property>
+                                                    <property name="minimum_size">80,-1</property>
                                                     <property name="moveable">1</property>
                                                     <property name="name">m_staticText12</property>
                                                     <property name="pane_border">1</property>
@@ -2943,7 +2943,7 @@
                                                     <property name="maximum_size"></property>
                                                     <property name="min_size"></property>
                                                     <property name="minimize_button">0</property>
-                                                    <property name="minimum_size">60,-1</property>
+                                                    <property name="minimum_size">80,-1</property>
                                                     <property name="moveable">1</property>
                                                     <property name="name">m_staticText13</property>
                                                     <property name="pane_border">1</property>
@@ -3387,7 +3387,7 @@
                                                     <property name="maximum_size"></property>
                                                     <property name="min_size"></property>
                                                     <property name="minimize_button">0</property>
-                                                    <property name="minimum_size">60,-1</property>
+                                                    <property name="minimum_size">80,-1</property>
                                                     <property name="moveable">1</property>
                                                     <property name="name">m_staticText14</property>
                                                     <property name="pane_border">1</property>
@@ -3561,7 +3561,7 @@
                                                     <property name="maximum_size"></property>
                                                     <property name="min_size"></property>
                                                     <property name="minimize_button">0</property>
-                                                    <property name="minimum_size">60,-1</property>
+                                                    <property name="minimum_size">80,-1</property>
                                                     <property name="moveable">1</property>
                                                     <property name="name">m_staticText15</property>
                                                     <property name="pane_border">1</property>
@@ -3927,7 +3927,7 @@
                                                     <property name="maximum_size"></property>
                                                     <property name="min_size"></property>
                                                     <property name="minimize_button">0</property>
-                                                    <property name="minimum_size">60,-1</property>
+                                                    <property name="minimum_size">80,-1</property>
                                                     <property name="moveable">1</property>
                                                     <property name="name">m_staticText18</property>
                                                     <property name="pane_border">1</property>
@@ -4275,7 +4275,7 @@
                                                     <property name="maximum_size"></property>
                                                     <property name="min_size"></property>
                                                     <property name="minimize_button">0</property>
-                                                    <property name="minimum_size">60,-1</property>
+                                                    <property name="minimum_size">80,-1</property>
                                                     <property name="moveable">1</property>
                                                     <property name="name">m_staticText20</property>
                                                     <property name="pane_border">1</property>
@@ -4449,7 +4449,7 @@
                                                     <property name="maximum_size"></property>
                                                     <property name="min_size"></property>
                                                     <property name="minimize_button">0</property>
-                                                    <property name="minimum_size">60,-1</property>
+                                                    <property name="minimum_size">80,-1</property>
                                                     <property name="moveable">1</property>
                                                     <property name="name">m_staticText21</property>
                                                     <property name="pane_border">1</property>
@@ -4623,7 +4623,7 @@
                                                     <property name="maximum_size"></property>
                                                     <property name="min_size"></property>
                                                     <property name="minimize_button">0</property>
-                                                    <property name="minimum_size">60,-1</property>
+                                                    <property name="minimum_size">80,-1</property>
                                                     <property name="moveable">1</property>
                                                     <property name="name">m_staticText22</property>
                                                     <property name="pane_border">1</property>
