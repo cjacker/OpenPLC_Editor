@@ -24,10 +24,14 @@ if [ "$INSTALLER" = "yum" ]; then
     sudo yum -q -y install curl make automake gcc gcc-c++ kernel-devel pkg-config bison flex autoconf libtool openssl-devel libpng libpng-devel freetype-devel libxml2 libxslt
     sudo yum -q -y install python2.7 python2-devel
     sudo yum -q -y install python2-wxpython
+    sudo yum -q -y install openssl1.1 
     if [ $? -ne 0 ]
     then
         echo "Manually installing python-wxgtk3.0..."
         sudo yum localinstall ./wxpython/python2-wxpython-3.0.2.0-26.fc31.x86_64.rpm
+    fi
+    if [ "$OS" = "Fedora" ]; then
+        sudo yum localinstall deps/python2-setuptools-36.1.1-1.noarch.rpm
     fi
 #Installing dependencies for Ubuntu/Mint/Debian
 else
@@ -60,12 +64,16 @@ else
     sudo apt-get -y -qq install libpng-dev libfreetype6-dev
 fi
 
-#Get pip manually
-curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
-sudo python2.7 get-pip.py
+if [ "$OS" = "Fedora" ]; then
+  cd deps && python2 -m pip install setuptools future zeroconf==0.19.1 numpy==1.16.5 matplotlib==2.0.2 lxml==4.6.2 pyro sslpsk pyserial && cd ..
+else
+  #Get pip manually
+  curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+  sudo python2.7 get-pip.py
+  #Install Python dependencies
+  pip2 install setuptools future zeroconf==0.19.1 numpy==1.16.5 matplotlib==2.0.2 lxml==4.6.2 pyro sslpsk pyserial
+fi
 
-#Install Python dependencies
-pip2 install future zeroconf==0.19.1 numpy==1.16.5 matplotlib==2.0.2 lxml==4.6.2 pyro sslpsk pyserial
 echo ""
 echo "[COMPILING MATIEC]"
 cd matiec
