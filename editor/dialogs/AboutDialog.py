@@ -75,10 +75,10 @@ class AboutDialog(wx.Dialog):
             close = wx.Button(self, id=wx.ID_CANCEL, label=_("&Close"))
         else:
             #Linux buttons must be a little bit bigger
-            credits = wx.Button(self, id=wx.ID_ABOUT, label=_("C&redits"), size = wx.Size( -1,50 ))
-            license = wx.Button(self, label=_("&License"), size = wx.Size( -1,50 ))
-            sponsors = wx.Button(self, label=("&Sponsors"), size = wx.Size( -1,50 ))
-            close = wx.Button(self, id=wx.ID_CANCEL, label=_("&Close"), size = wx.Size( -1,50 ))
+            credits = wx.Button(self, id=wx.ID_ABOUT, label=_("C&redits"), size = wx.Size( -1,80 ))
+            license = wx.Button(self, label=_("&License"), size = wx.Size( -1,80 ))
+            sponsors = wx.Button(self, label=("&Sponsors"), size = wx.Size( -1,80 ))
+            close = wx.Button(self, id=wx.ID_CANCEL, label=_("&Close"), size = wx.Size( -1,80 ))
         
         btnSizer = wx.BoxSizer(wx.HORIZONTAL)
         btnSizer.Add(credits, flag=wx.CENTER | wx.LEFT | wx.RIGHT, border=5)
